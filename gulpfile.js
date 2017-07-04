@@ -12,8 +12,10 @@ var config = {
 var paths = {
   assets: "/assets/",
   html: "**/*.html",
-  js: "js/componentes/**.js",
+  js: "js/**.js",
+  components: "js/componentes/**.js",
   vendor: "js/vendor/**.js",
+  utils: "js/utils/**.js",
   sass: "scss/**/*.scss",
   mainSass: "scss/main.scss",
   mainJS: "js/app.js"
@@ -24,6 +26,8 @@ var sources = {
   sass: paths.assets + paths.sass,
   js: config.source+paths.assets+ paths.js,
   vendor: config.source+paths.assets+ paths.vendor,
+  components: config.source + paths.assets + paths.components,
+  utils: config.source+paths.assets+ paths.utils,
   rootSass: config.source + paths.assets + paths.mainSass,
   rootJS: config.source + paths.assets + paths.mainJS,
 };
@@ -41,8 +45,9 @@ gulp.task('sass', ()=>{
 });
 
 gulp.task('js', ()=>{
-  gulp.src([sources.vendor,sources.js,sources.rootJS])
-  .pipe(concat(sources.rootJS))
+  console.log(sources.utils);
+  gulp.src([sources.vendor,sources.utils,sources.components,sources.rootJS])
+  .pipe(concat("new.js"))//temporal no es necsario en un existente
   .pipe(browserify())
   .pipe(rename("bundle.js"))
   .pipe(gulp.dest(config.dist + paths.assets + "js"));
