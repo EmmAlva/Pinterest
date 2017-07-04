@@ -11,6 +11,7 @@ var config = {
 };
 var paths = {
   assets: "/assets/",
+  imgPng:"img/*.png",
   html: "**/*.html",
   js: "js/componentes/**.js",
   vendor: "js/vendor/**.js",
@@ -20,13 +21,18 @@ var paths = {
 };
 var sources = {
   assets: config.source + paths.assets,
+  img: config.source + paths.assets + paths.imgPng,
   html: config.source + paths.html,
   sass: paths.assets + paths.sass,
-  js: config.source+paths.assets+ paths.js,
-  vendor: config.source+paths.assets+ paths.vendor,
+  js: config.source + paths.assets + paths.js,
+  vendor: config.source + paths.assets + paths.vendor,
   rootSass: config.source + paths.assets + paths.mainSass,
   rootJS: config.source + paths.assets + paths.mainJS,
 };
+gulp.task("img",()=>{
+    gulp.src(sources.img).pipe(gulp.dest(config.dist + paths.assets + "img"));
+});
+
 gulp.task('html', ()=>{
   gulp.src(sources.html).pipe(gulp.dest(config.dist));
 });
@@ -46,6 +52,10 @@ gulp.task('js', ()=>{
   .pipe(browserify())
   .pipe(rename("bundle.js"))
   .pipe(gulp.dest(config.dist + paths.assets + "js"));
+});
+gulp.task("img-watch",["img"], (done)=>{
+  browserSync.reload();
+  done();
 });
 gulp.task("sass-watch", ["sass"], function (done) {
   browserSync.reload();
@@ -69,6 +79,7 @@ gulp.task("serve", () => {
       // baseDir: config.dist + paths.assets
     }
   });
+  gulp.watch(sources.img, ["img-watch"]);
   gulp.watch(sources.html, ["html-watch"]);
   gulp.watch(sources.sass, ["sass-watch"]);
   gulp.watch(sources.js, ["js-watch"]);
