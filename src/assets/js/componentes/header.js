@@ -23,7 +23,30 @@ const Header = (update) =>{
 
    const divCol4 = $("<div class='col-xs-2 col-md-2'></div>");
    const aUser = $("<a href='#'></a>");
-   const divUserHov = $("");
+   const divUserHov = $("<div class='hover flex-container-column'></div>");
+   const icoUser = $("<i style='font-size:24px' class='glyphicon glyphicon-user silver-text-color'></i>");
+   const pUser = $("<p class='silver-text-color'>Guardado</p>");
+
+   const divCol5 = $("<div class='col-xs-2 col-md-2'></div>");
+   const aTask = $("<a href='#'></a>");
+   const divTaskHov = $("<div class='hover flex-container-column'></div>");
+   const icoTask = $("<i style='font-size: 24px' class='glyphicon glyphicon-tasks silver-text-color'></i>");
+   const pTask = $("<p class='silver-text-color'>Categorías</p>");
+
+   const divCol6 = $("<div class='col-xs-2 col-md-2'></div>");
+   const aOption =$()
+
+   icoTask.append(divTaskHov);
+   pTask.append(divTaskHov);
+   divTaskHov.append(aTask);
+   aTask.append(divCol5);
+   divCol5.append(divContainerfluid);
+
+   icoUser.append(divUserHov);
+   pUser.append(divUserHov);
+   divUserHov.append(aUser);
+   aUser.append(divCol4);
+   divCol4.append(divContainerfluid);
 
    icoSearchHidden.append(spanInpAdd);
    spanInpAdd.append(divInputGroup);
