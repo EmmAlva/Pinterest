@@ -35,7 +35,17 @@ const Header = (update) =>{
 
    const divCol6 = $("<div class='col-xs-2 col-md-2'></div>");
    const aOption =$("<a href='#'></a>");
-   const div
+   const divOptionHov = $("<div class='hover flex-container-column'></div>");
+   const divSms = $("<div class='msm flex-container-column'></div>");
+   const icoOption = $("<i class='glyphicon glyphicon-option-horizontal' style='color:white; font-size:20px'></i>");
+   const pOption = $("<p class='silver-text-color'>Notificaciones</p>");
+
+   icoOption.append(divSms);
+   divSms.append(divOptionHov);
+   pOption.append(divOptionHov);
+   divOptionHov.append(aOption);
+   aOption.append(divCol6);
+   divCol6.append(divContainerfluid);
 
    icoTask.append(divTaskHov);
    pTask.append(divTaskHov);
@@ -69,9 +79,8 @@ const Header = (update) =>{
    divRow.append(divContainerfluid);
    divContainerfluid.append(section);
    section.append(header);
-  //  bntSignUp.on("click",function(event) {
-  //   state.selectedYape = 1;
-  //   update();
-  //  })
+
+    update();
+
    return header;
  }
