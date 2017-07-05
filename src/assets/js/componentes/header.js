@@ -6,7 +6,7 @@ const Header = (data,update) => {
   const section = $("<section></section>");
   const divContainerfluid = $("<div class='container-fluid'></div>");
   const divRow = $("<div class='row flex-container-row margin1x1'></div>");
-  const divCol1 = $("<div class='col-xs-3 col-md-2'></div>");
+  const divCol1 = $("<div class='col-xs-3 col-md-1'></div>");
   const aPintLog = $("<a href='#'></a>");
   const divPintLogHover = $("<div class='hover flex-container-column'></div>");
   const imgPintLog = $("<img src='assets/img/pinterest-logo.png' height='28px' width='28px'>");
@@ -15,12 +15,12 @@ const Header = (data,update) => {
   const divIcoSearchHover = $("<div class='hover flex-container-column'></div>");
   const icoSearch = $('<img style="font-size:24px; width: 20px;" src="assets/img/search.png" >');
   // const pIcoSeaerch = $("<p class='silver-text-color'>Buscar</p>");
-  const divCol3 = $("<div class='hidden-xs col-md-4'></div>");
+  const divCol3 = $("<div class='hidden-xs col-md-8'></div>");
   const divInputGroup = $("<div class='input-group'></div>");
   const spanInpAdd = $("<span class='input-group-addon'></span>");
   const icoSearchHidden = $('<img style="font-size:24px; width: 20px" src="assets/img/search.png" >');
   const inputHiddenSearch = $("<input type='text' class='form-control' placeholder='Buscar'>");
-  const divCol4 = $("<div class='col-xs-2 col-md-2'></div>");
+  const divCol4 = $("<div class='col-xs-2 col-md-3'></div>");
   const aUser = $("<a href='#'></a>");
   const divUserHov = $("<div class='hover flex-container-column'></div>");
   const icoUser = $('<img style="font-size:24px" src="assets/img/icon-profile.png" >');
@@ -40,18 +40,18 @@ const Header = (data,update) => {
   const row0 = $('<div class = "row "></div>');
   const colum = $('<div class="col-lg-6 col-lg-offset-3"></div>');
   const col1 = $('<div class="col-lg-6"></div>');
-  const icon1 = $('<span><img src="assets/img/pencil.png" alt="pencil" ></span>');
-  const icon2 = $('<span><img src="assets/img/arrow.png"  alt="arrow"></span>');
-  const icon3 = $('<span><img src="assets/img/more.png" alt="more"></span>');
+  const icon1 = $('<span><img src="assets/img/pencil.png"></span>');
+  const icon2 = $('<span><img src="assets/img/arrow.png" ></span>');
+  const icon3 = $('<span><img src="assets/img/more.png"></span>');
   const col2 = $('<div class="col-lg-6"></div>');
   const btn = $('<button class="btn btn-danger pull-right">Seguir tablero</button>');
   const row = $('<div class = "row"></div>');
   const col = $('<div class="col-lg-6 col-lg-offset-3"></div>');
-  const col1_6 = $('<div class="col-lg-6 col-xs-4"></div>');
+  const col1_6 = $('<div class="col-lg-6"></div>');
   const boardName = $('<h2 class="text-bold">'+data.name+'</h2>');
   const pins = $('<p><strong>'+data.pins+'</strong> Pines</p>');
   const followers = $('<p><strong>'+data.followers+'</strong> Seguidores</p>');
-  const col2_6 = $('<div class="col-lg-4"></div>');
+  const col2_6 = $('<div class="col-lg-6"></div>');
   const picture = $('<img class="img-circle pull-right" src="'+data.foto+'" alt="user">');
 
   header.append(section);
@@ -80,13 +80,13 @@ const Header = (data,update) => {
   divUserHov.append(icoUser);
 
   divRow.append(divCol5);
-  divCol5.append(aTask);
+  divCol4.append(aTask);
   aTask.append(divTaskHov);
   // divTaskHov.append(pTask);
   divTaskHov.append(icoTask);
 
   divRow.append(divCol6);
-  divCol6.append(aOption);
+  divCol4.append(aOption);
   aOption.append(divOptionHov);
   divOptionHov.append(icoOption);
 
@@ -108,5 +108,6 @@ const Header = (data,update) => {
   col1_6.append(pins);
   col1_6.append(followers);
   col2_6.append(picture);
+
   return header;
 }
