@@ -8,7 +8,6 @@ const render = (root,data) => {
     wrapper.append(Header(data,_=>{ render(root) }));
     // wrapper.append(Board(data,_=>{ render(root) }));
   }else{
-
     wrapper.append(Board(data,_=>{ render(root) }));
   }
   root.append(wrapper);
@@ -21,7 +20,6 @@ const state = {
 };
 $( _ => {
   const root = $("#root");
-
   state.user = 'arabelyuska';
   getUser(state.user).then((response) => {
        if(response.data == null){
@@ -38,7 +36,6 @@ $( _ => {
           state.data.boards = response.data;
             render(root,state.data);
          });
-
        }
      });
-});
+  })

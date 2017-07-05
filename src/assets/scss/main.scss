@@ -1,7 +1,8 @@
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-body{
-
+body *{
+  padding: 0;
+  margin: 0;
 }
 .text-bold{
   font-weight: bold;
