@@ -19,6 +19,7 @@ const itemBoard = (board) => {
 
   div.append(title,description,picture,autor);
   item.append(img,div);
+  console.log(board.note);
   return item;
 
 }

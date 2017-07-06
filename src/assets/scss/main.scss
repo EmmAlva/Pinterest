@@ -24,12 +24,35 @@ $cant-column : (xs : 1, sm : 2, md : 3, lg : 5 );
   }
 }
 
-.boards{
+.container-board{
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
+  section{
+    z-index: 200;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left:0;
+    padding-bottom: 18px;
+  }
+  .container{
+    margin-top: 120px;
+  }
+}
+
+.header-fix{
+  border-top: 1px solid rgba(108, 108, 108,0.5);
+  padding-top: 16px;
+}
+
+.mg-b{
+  margin-bottom: 50px;
+}
+.boards{
+  @extend .container-board;
   &__item{
-    margin-bottom: 50px;
+    @extend .mg-b;
     display: inline-block;
     &--img{
       border-radius: 10px;
