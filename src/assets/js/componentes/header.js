@@ -42,7 +42,7 @@ const Header = (data,update) => {
   const col1 = $('<div class="col-lg-6"></div>');
   const icon1 = $('<span><img src="assets/img/pencil.png"></span>');
   const icon2 = $('<span><img src="assets/img/arrow.png"></span>');
-  const icon3 = $('<span><img src="assets/img/share.svg"></span>');
+  const icon3 = $('<span><img src="assets/img/more.png"></span>');
   const col2 = $('<div class="col-lg-6"></div>');
   const btn = $('<button class="btn btn-danger pull-right">Seguir tablero</button>');
   const row = $('<div class = "row mg-b"></div>');
