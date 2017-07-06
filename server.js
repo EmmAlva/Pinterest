@@ -1,23 +1,9 @@
-// const express = require('express');
-// const app = express();
-//
-// app.use('/',express.static('public'));
-//
-// app.listen(3000, () => {
-//     console.log('Listening on 3000');
-// });
 
-var express = require('express');
-var path = require('path');
-var app = express();
+const express = require('express');
+const app = express();
+
+app.use('/', express.static('public'));
 app.set('port', (process.env.PORT || 5000));
-
-app.use('/static',express.static(path.join(__dirname, 'node_modules')));
-app.use('/static',express.static(path.join(__dirname, 'public/assets')));
-app.get('/',(req,res) => {
-  res.sendFile(__dirname+'/index.html');
-});
-
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
